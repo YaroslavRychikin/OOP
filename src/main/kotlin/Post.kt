@@ -13,7 +13,7 @@ fun main(){
         likes = 98,
         reposts = 3,
         views = 2000,
-        postType = "repost"
+        postType = "repost",
         signerId = 0,
         canPin = true,
         canDelete = true,
