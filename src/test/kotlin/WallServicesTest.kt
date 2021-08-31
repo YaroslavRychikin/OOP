@@ -28,8 +28,8 @@ class WallServicesTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = false,
-            postponed_id = 99)).id
-        assert(result in 1..100_000_000)
+            postponed_id = 99))
+        assert(result.id != 0)
     }
 
     @Test
