@@ -27,10 +27,7 @@ class WallService {
     fun update(post: Post): Boolean {
         for (postFor in posts){
             if (post.id == postFor.id){
-                val newPost = postFor.copy(createdBy = 9, text = "OOO", replyOwnerId =  10,
-                    replyPostId = 50, friendsOnly = true, comments = 100, likes = 200, reposts = 6, views = 2500,
-                    signerId = 0, markedAsAds = true, iaFavorite = false, donut = false, postponed_id = 200)
-                posts[posts.indexOf(postFor)] = newPost
+                posts[posts.indexOf(postFor)] = post
                 return true
             }
         }
