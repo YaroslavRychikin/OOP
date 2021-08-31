@@ -34,7 +34,6 @@ class WallService {
                 return true
             }
         }
-        return false
     }
 
     fun getIdFromMemory(index: Int): Int = if (index >= memoryOfId.size || index < 0) 0 else memoryOfId[index]
