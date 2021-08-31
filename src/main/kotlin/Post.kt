@@ -13,7 +13,7 @@ fun main(){
         likes = 98,
         reposts = 3,
         views = 2000,
-        postType = "post",
+        postType = "repost"
         signerId = 0,
         canPin = true,
         canDelete = true,
@@ -22,7 +22,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
     println(wall.add(Post(id = 1, ownerId = 8,
         fromId = 78,
         createdBy = 8,
@@ -45,7 +45,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
     println(wall.add(Post( ownerId = 7 ,
         fromId = 78,
         createdBy = 8,
@@ -59,7 +59,7 @@ fun main(){
         likes = 98,
         reposts = 3,
         views = 2000,
-        postType = "post",
+        postType = "repost",
         signerId = 0,
         canPin = true,
         canDelete = true,
@@ -68,7 +68,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
     println(wall.update(Post(id = 2, ownerId = 7 ,
         fromId = 78,
         createdBy = 8,
@@ -83,11 +83,7 @@ fun main(){
         reposts = 0,
         views = 2000,
         postType = "repost",
-        postSource = "vk",
-        attachment = emptyArray(),
-        geo = "Russia",
         signerId = 0,
-        copyHistory = arrayOf("ret", "pot", "log"),
         canPin = true,
         canDelete = true,
         canEdit = true,
@@ -95,7 +91,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
 }
 
 
@@ -122,4 +118,4 @@ data class Post(val id: Int = 0,
                 val markedAsAds: Boolean,
                 val  iaFavorite: Boolean = false ,
                 val donut: Any,
-                val postponed_id: Int)
+                val postponedId: Int)
