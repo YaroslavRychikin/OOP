@@ -1,39 +1,22 @@
-import kotlin.random.Random
-
 class WallService {
     private var posts = emptyArray<Post>()
-    private var memoryOfId = emptyArray<Int>()
 
     fun add(post: Post): Post {
         if (posts.isNotEmpty()) for(postFor in  posts){
             if (postFor.id == post.id) return postFor
         }
-        for(postFor in  posts){
-            if (postFor.id == post.id) return post
-        }
-        var random = Random.nextInt(1,100_000_000)
-            posts.forEach r@{
-                if (it.id == random) {
-                    random = Random.nextInt(1,100_000_000)
-                    return@r
-                }
-            }
-        memoryOfId += random
-        val newPost = post.copy(id = random)
+        val newPost = if (posts.isNotEmpty()) post.copy(id = posts.last().id + 1) else post.copy(id = 1)
         posts += newPost
         return newPost
     }
 
     fun update(post: Post): Boolean {
-        for (postFor in posts){
-            if (post.id == postFor.id){
-                posts[posts.indexOf(postFor)] = post
+        for ((index, postInArray) in posts.withIndex()) {
+            if (post.id == postInArray.id) {
+                posts[index] = post.copy(ownerId = postInArray.ownerId, date = postInArray.date)
                 return true
             }
         }
         return false
     }
-
-    fun getIdFromMemory(index: Int): Int = if (index >= memoryOfId.size || index < 0) 0 else memoryOfId[index]
-
 }
