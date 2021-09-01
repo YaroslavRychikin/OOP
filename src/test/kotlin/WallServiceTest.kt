@@ -1,7 +1,7 @@
 import org.junit.Assert.*
 import org.junit.Test
 
-class WallServicesTest {
+class WallServiceTest {
 
     @Test
     fun add() {
@@ -58,7 +58,7 @@ class WallServicesTest {
             iaFavorite = true,
             donut = true,
             postponed_id = 99))
-        val update = Post(service.getIdFromMemory(0),
+        val update = Post(id = 1,
             ownerId = 78 ,
             fromId = 78,
             createdBy = 8,
