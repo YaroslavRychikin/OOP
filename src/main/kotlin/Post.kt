@@ -147,13 +147,3 @@ data class Post(val id: Int = 0,
                 val  iaFavorite: Boolean = false ,
                 val donut: Any,
                 val postponed_id: Int)
-class Comment(val id: Int,
-              val fromId: Int,
-              val date: Int,
-              val text: String,
-              val donut: Boolean,
-              val replyToUser: Int = 0,
-              val replyToComment: Int = 0,
-              val attachments: Array<Attachment>,
-              val parentsStack: Array<Int>,
-              val thread: Array<Int>)

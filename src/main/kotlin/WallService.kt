@@ -1,6 +1,5 @@
 class WallService {
     private var posts = emptyArray<Post>()
-    private var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post {
         val newPost = if (posts.isNotEmpty()) post.copy(id = posts.last().id + 1) else post.copy(id = 1)
