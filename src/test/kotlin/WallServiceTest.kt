@@ -1,7 +1,7 @@
 import org.junit.Assert.*
 import org.junit.Test
 
-class WallServicesTest {
+class WallServiceTest {
 
     @Test
     fun add() {
