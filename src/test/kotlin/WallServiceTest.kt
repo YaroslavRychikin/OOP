@@ -106,6 +106,7 @@ class WallServiceTest {
         assertTrue(result)
     }
 
+
     @Test
     fun updateFail() {
         val service = WallService()
@@ -166,5 +167,58 @@ class WallServiceTest {
             postponedId = 99)
         val result = service.update(update)
         assertFalse(result)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun createComment_shouldThrow() {
+        val service = WallService()
+        service.createComment(Comment(fromId = 55,
+            date = 7,
+            text = "Good",
+            donut = false,
+            attachments = emptyArray(),
+            parentsStack = emptyArray(),
+            thread = emptyArray(),
+            postId = 100))
+    }
+    @Test
+    fun createComment_correctWork(){
+        val service = WallService()
+        service.add(Post(ownerId = 8,
+            fromId = 78,
+            createdBy = 8,
+            date = 3,
+            text = "Привет",
+            replyOwnerId =  10,
+            replyPostId = 8,
+            friendsOnly = false,
+            comments = 99,
+            copyright = "Yes",
+            likes = 98,
+            reposts = 3,
+            views = 2000,
+            postType = "post",
+            postSource = "vk",
+            attachment = emptyArray(),
+            geo = "Russia",
+            signerId = 0,
+            copyHistory = emptyArray(),
+            canPin = true,
+            canDelete = true,
+            canEdit = true,
+            isPinned = true,
+            markedAsAds = false,
+            iaFavorite = true,
+            donut = true,
+            postponedId = 99))
+        service.createComment(Comment(fromId = 55,
+            date = 7,
+            text = "Good",
+            donut = false,
+            attachments = emptyArray(),
+            parentsStack = emptyArray(),
+            thread = emptyArray(),
+            postId = 1))
+
     }
 }

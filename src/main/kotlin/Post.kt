@@ -116,6 +116,14 @@ fun main(){
         iaFavorite = true,
         donut = true,
         postponedId = 99)))
+    wall.createComment(Comment(fromId = 55,
+        date = 7,
+        text = "Good",
+        donut = false,
+        attachments = emptyArray(),
+        parentsStack = emptyArray(),
+        thread = emptyArray(),
+        postId = 1))
 }
 
 
@@ -147,3 +155,14 @@ data class Post(val id: Int = 0,
                 val  iaFavorite: Boolean = false ,
                 val donut: Any,
                 val postponedId: Int)
+data class Comment(val id: Int = 0,
+              val fromId: Int,
+              val date: Int,
+              val text: String,
+              val donut: Boolean,
+              val replyToUser: Int = 0,
+              val replyToComment: Int = 0,
+              val attachments: Array<Attachment>,
+              val parentsStack: Array<Int>,
+              val thread: Array<Int>,
+              val postId: Int)
