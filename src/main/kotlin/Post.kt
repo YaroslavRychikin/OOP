@@ -34,8 +34,8 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
-    println(wall.add(Post(id = 1, ownerId = 8 ,
+        postponedId = 99)))
+    println(wall.add(Post(id = 1, ownerId = 8,
         fromId = 78,
         createdBy = 8,
         date = 3,
@@ -61,7 +61,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
     println(wall.add(Post( ownerId = 7 ,
         fromId = 78,
         createdBy = 8,
@@ -88,7 +88,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
     println(wall.update(Post(id = 2, ownerId = 7 ,
         fromId = 78,
         createdBy = 8,
@@ -115,7 +115,7 @@ fun main(){
         markedAsAds = false,
         iaFavorite = true,
         donut = true,
-        postponed_id = 99)))
+        postponedId = 99)))
 }
 
 
@@ -146,4 +146,4 @@ data class Post(val id: Int = 0,
                 val markedAsAds: Boolean,
                 val  iaFavorite: Boolean = false ,
                 val donut: Any,
-                val postponed_id: Int)
+                val postponedId: Int)

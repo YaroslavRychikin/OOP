@@ -40,7 +40,7 @@ class WallServiceTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = false,
-            postponed_id = 99))
+            postponedId = 99))
         assert(result.id != 0)
     }
 
@@ -73,7 +73,7 @@ class WallServiceTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = true,
-            postponed_id = 99))
+            postponedId = 99))
         val update = Post(id = 1,
             ownerId = 78 ,
             fromId = 78,
@@ -101,7 +101,7 @@ class WallServiceTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = true,
-            postponed_id = 99)
+            postponedId = 99)
         val result = service.update(update)
         assertTrue(result)
     }
@@ -135,7 +135,7 @@ class WallServiceTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = true,
-            postponed_id = 99))
+            postponedId = 99))
         val update = Post(id = 4,
             ownerId = 78 ,
             fromId = 78,
@@ -163,7 +163,7 @@ class WallServiceTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = true,
-            postponed_id = 99)
+            postponedId = 99)
         val result = service.update(update)
         assertFalse(result)
     }
