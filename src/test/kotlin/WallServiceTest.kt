@@ -1,7 +1,7 @@
 import org.junit.Assert.*
 import org.junit.Test
 
-class WallServicesTest {
+class WallServiceTest {
 
     @Test
     fun add() {
@@ -20,7 +20,19 @@ class WallServicesTest {
             reposts = 0,
             views = 100,
             postType = "post",
+            postSource = "vk",
+            attachment = arrayOf(PhotoAttachment(photo = Photo(id = 78,
+                albumId = 8,
+                ownerId =99,
+                userId = 8,
+                text ="Relax.",
+                date = 5,
+                sizes = arrayOf("http//"),
+                width = 200,
+                height = 100))),
+            geo = "Russia",
             signerId = 0,
+            copyHistory = arrayOf("Park", "tree"),
             canPin = true,
             canDelete = true,
             canEdit = true,
@@ -28,8 +40,8 @@ class WallServicesTest {
             markedAsAds = false,
             iaFavorite = true,
             donut = false,
-            postponed_id = 99)).id
-        assert(result in 1..100_000_000)
+            postponed_id = 99))
+        assert(result.id != 0)
     }
 
     @Test
@@ -49,7 +61,11 @@ class WallServicesTest {
             reposts = 3,
             views = 2000,
             postType = "post",
+            postSource = "vk",
+            attachment = emptyArray(),
+            geo = "Russia",
             signerId = 0,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = true,
             canEdit = true,
@@ -58,7 +74,7 @@ class WallServicesTest {
             iaFavorite = true,
             donut = true,
             postponed_id = 99))
-        val update = Post(service.getIdFromMemory(0),
+        val update = Post(id = 1,
             ownerId = 78 ,
             fromId = 78,
             createdBy = 8,
@@ -73,7 +89,11 @@ class WallServicesTest {
             reposts = 3,
             views = 2000,
             postType = "post",
+            postSource = "vk",
+            attachment = emptyArray(),
+            geo = "Russia",
             signerId = 0,
+            copyHistory = emptyArray(),
             canPin = true,
             canDelete = true,
             canEdit = true,
@@ -103,7 +123,11 @@ class WallServicesTest {
             reposts = 3,
             views = 2000,
             postType = "post",
+            postSource = "vk",
+            attachment = emptyArray(),
+            geo = "Russia",
             signerId = 0,
+            copyHistory = arrayOf("port"),
             canPin = true,
             canDelete = true,
             canEdit = true,
@@ -112,7 +136,7 @@ class WallServicesTest {
             iaFavorite = true,
             donut = true,
             postponed_id = 99))
-        val update = Post(id = 77,
+        val update = Post(id = 4,
             ownerId = 78 ,
             fromId = 78,
             createdBy = 8,
@@ -127,7 +151,11 @@ class WallServicesTest {
             reposts = 3,
             views = 2000,
             postType = "post",
+            postSource = "vk",
+            attachment = emptyArray(),
+            geo = "Russia",
             signerId = 0,
+            copyHistory = arrayOf("port"),
             canPin = true,
             canDelete = true,
             canEdit = true,
